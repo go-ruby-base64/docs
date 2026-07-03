@@ -100,27 +100,55 @@ MRI before any timing.
   Interpreter start-up is outside the timed region, so these are operation costs,
   not `ruby file.rb` process costs.
 
-#### decode-3KiB
+#### decode64-3KiB — `Base64.decode64`, newline-wrapped (the lenient hot path)
 
 | Runtime | ns/op | vs MRI |
 | --- | ---: | ---: |
-| **go-ruby (pure Go)** | 5997.8 | 4.70× |
-| MRI | 1275.5 | 1.00× |
-| MRI + YJIT | 1221.5 | 0.96× |
-| JRuby | 1777.9 | 1.39× |
-| TruffleRuby | 8768.7 | 6.87× |
+| **go-ruby (pure Go)** | 1653.4 | 0.92× |
+| MRI | 1804.0 | 1.00× |
+| MRI + YJIT | 1742.0 | 0.97× |
+| JRuby | 2381.9 | 1.32× |
+| TruffleRuby | 12218.1 | 6.77× |
 
-#### encode-3KiB
+Lenient `Base64.decode64` on its real hot input — `Base64.encode64` output,
+standard base64 wrapped at 60 columns with a newline every line — now **beats
+both MRI and MRI + YJIT** (0.92× MRI; 1653.4 / 1742.0 = **0.95× YJIT**). It moved
+here from ~1.13× MRI once `Decode64` was wired to
+[go-simd/base64](https://github.com/go-simd/base64)'s vectorised **`Compact`**
+de-space kernel and its **in-place `Decode`** contract, collapsing the scalar
+de-space + a spare buffer that had kept it just behind the reference (see the
+library's
+[`docs/performance.md`](https://github.com/go-ruby-base64/base64/blob/main/docs/performance.md)
+and [go-ruby-base64/base64#2](https://github.com/go-ruby-base64/base64/pull/2)).
+The lead over YJIT is thin (~3–8% across runs, always < 1.00×); a planned
+wide-vector `Compact` (go-asmgen left-pack) would widen it and lift the other
+five arches too.
+
+#### decode-3KiB — `Base64.strict_decode64`, no newlines
 
 | Runtime | ns/op | vs MRI |
 | --- | ---: | ---: |
-| **go-ruby (pure Go)** | 746.1 | 0.67× |
+| **go-ruby (pure Go)** | 1708.7 | 1.34× |
+| MRI | 1275.0 | 1.00× |
+| MRI + YJIT | 1238.0 | 0.97× |
+| JRuby | 1760.0 | 1.38× |
+| TruffleRuby | 8753.7 | 6.87× |
+
+#### encode-3KiB — `Base64.strict_encode64`
+
+| Runtime | ns/op | vs MRI |
+| --- | ---: | ---: |
+| **go-ruby (pure Go)** | 796.9 | 0.72× |
 | MRI | 1106.5 | 1.00× |
-| MRI + YJIT | 1071.5 | 0.97× |
-| JRuby | 7244.1 | 6.55× |
-| TruffleRuby | 9790.7 | 8.85× |
+| MRI + YJIT | 1083.0 | 0.98× |
+| JRuby | 7206.3 | 6.51× |
+| TruffleRuby | 9651.3 | 8.72× |
 
-Encode **beats MRI** (0.67×): the [go-simd/base64](https://github.com/go-simd/base64) kernel is on the encode path. Decode is currently ~4.7× MRI's C `String#unpack('m')` — go-ruby's `StrictDecode64` allocates a fresh output string and validates strictly on every call, so decode is this module's top optimization target. Output stays byte-identical to MRI (verified: encoded SHA-256 prefix `76e66b49…`).
+Encode **beats MRI** (0.72×): the go-simd/base64 kernel is on the encode path.
+Strict `decode64` (no newlines) is ~1.3× MRI — its byte-scan + strict validation
+has no line breaks to strip, so `Compact` does not apply; it is the module's
+remaining decode target. Every output is checked **byte-identical to MRI** against
+the live oracle before timing.
 
 !!! note "Reproduce"
     The harness is committed under
