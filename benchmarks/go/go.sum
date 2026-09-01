@@ -8,11 +8,17 @@ github.com/go-ruby-base64/base64 v0.0.0-20260820220038-f94a454ec53a h1:s1oz5/RFM
 github.com/go-ruby-base64/base64 v0.0.0-20260820220038-f94a454ec53a/go.mod h1:FJYchDpreeQldaqviSgPOeMN/xXzQ4OGmePT4B4wzx4=
 github.com/go-ruby-base64/base64 v0.0.0-20260830121649-1d6169a5a705 h1:SY0tc3to2o8RqYkoV0niFcA9VF2i8Whpc1CpodV8/vc=
 github.com/go-ruby-base64/base64 v0.0.0-20260830121649-1d6169a5a705/go.mod h1:S3oRlCn58+8n/KFszi/0htFM+JQ/gaYF/rpjSehx8WE=
+github.com/go-ruby-base64/base64 v0.0.0-20260831125308-c648159ef022 h1:OrE0WkC/ihmDM37eWhatHgVk8U+ATA8s49ZKVrEeCaM=
+github.com/go-ruby-base64/base64 v0.0.0-20260831125308-c648159ef022/go.mod h1:9lt5/QjcFEfl9+YWQ4di36WhBhni4FgVnEgTAu3My+A=
 github.com/go-simd/base64 v0.0.0-20260703160615-1d0b2dddc996 h1:q3fyZ61j/I6dilPPgLHSTohxpDXPewe4Nnp7FQ4oJgE=
 github.com/go-simd/base64 v0.0.0-20260703160615-1d0b2dddc996/go.mod h1:/nL/YHcchLkENbcFEEqAcfESIiwCM9/1H67LsSnd7EI=
 github.com/go-simd/base64 v0.0.0-20260806072918-de4c3405addc h1:Obf/Uye4NRmoqgo4Iz4GPOT8xGakGR+sAXF1PZ1QOOE=
 github.com/go-simd/base64 v0.0.0-20260806072918-de4c3405addc/go.mod h1:JNDIFvYDNtSrY/ZjKA8M/O2ggXtAYuxQzsxQ51TvjE0=
 github.com/go-simd/base64 v0.0.0-20260830080008-dcbe0eea954f h1:tw5KWseIlaaiuu5cpAKnw6i3b8LsZcvDE3l23af+Cug=
 github.com/go-simd/base64 v0.0.0-20260830080008-dcbe0eea954f/go.mod h1:JNDIFvYDNtSrY/ZjKA8M/O2ggXtAYuxQzsxQ51TvjE0=
+github.com/go-simd/base64 v0.0.0-20260830212547-2fee128e345a h1:wMhy2Tf8691MgS4tRmIxPlX3x42OdE3F6VnzXbFqS04=
+github.com/go-simd/base64 v0.0.0-20260830212547-2fee128e345a/go.mod h1:P2YPxBiS0h0R01P7Cqrhj4cZHKiacpO3Z2qLE3RflOQ=
 golang.org/x/sys v0.28.0 h1:Fksou7UEQUWlKvIdsqzJmUmCX3cZuD2+P3XyyzwMhlA=
 golang.org/x/sys v0.28.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
+golang.org/x/sys v0.47.0 h1:o7XGOvZQCADBQQ4Y7VNq2dRWQR7JmOUW8Kxx4ZsNgWs=
+golang.org/x/sys v0.47.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=
