@@ -16,6 +16,8 @@ github.com/go-ruby-base64/base64 v0.0.0-20260905061640-0d3d5b32edea h1:8M1w5wBZA
 github.com/go-ruby-base64/base64 v0.0.0-20260905061640-0d3d5b32edea/go.mod h1:JZf/Kc4NucCOPGiikq72HcKqM81N5xcxZ5QWBqT7fyU=
 github.com/go-ruby-base64/base64 v0.0.0-20260916090912-e1e211a81fd1 h1:o67TKyiWELF07wklV220MjmFV6LBsGAC1XzxyZa+uSQ=
 github.com/go-ruby-base64/base64 v0.0.0-20260916090912-e1e211a81fd1/go.mod h1:JZf/Kc4NucCOPGiikq72HcKqM81N5xcxZ5QWBqT7fyU=
+github.com/go-ruby-base64/base64 v0.0.0-20261010103111-e0ad51879f5e h1:dvNGEMhda0UXSGmW4dVNJXYSrLgVg/WeGyycRGXqvEc=
+github.com/go-ruby-base64/base64 v0.0.0-20261010103111-e0ad51879f5e/go.mod h1:yyreEmR16Uk0MBkfYF92Km8e1bRwwd+sV4sFvdg9cVo=
 github.com/go-simd/base64 v0.0.0-20260703160615-1d0b2dddc996 h1:q3fyZ61j/I6dilPPgLHSTohxpDXPewe4Nnp7FQ4oJgE=
 github.com/go-simd/base64 v0.0.0-20260703160615-1d0b2dddc996/go.mod h1:/nL/YHcchLkENbcFEEqAcfESIiwCM9/1H67LsSnd7EI=
 github.com/go-simd/base64 v0.0.0-20260806072918-de4c3405addc h1:Obf/Uye4NRmoqgo4Iz4GPOT8xGakGR+sAXF1PZ1QOOE=
@@ -28,7 +30,11 @@ github.com/go-simd/base64 v0.0.0-20260901145456-eb8404bccc8f h1:sfv1tO3vPwaD0uTT
 github.com/go-simd/base64 v0.0.0-20260901145456-eb8404bccc8f/go.mod h1:P2YPxBiS0h0R01P7Cqrhj4cZHKiacpO3Z2qLE3RflOQ=
 github.com/go-simd/base64 v0.0.0-20260903220000-c04f5883bb18 h1:qRxVDQapJmkrxakah1XqYxnYc8nhbTUhb0R7ZF+ZkiU=
 github.com/go-simd/base64 v0.0.0-20260903220000-c04f5883bb18/go.mod h1:P2YPxBiS0h0R01P7Cqrhj4cZHKiacpO3Z2qLE3RflOQ=
+github.com/go-simd/base64 v0.1.0 h1:Pd5aYE5Zuflf8PDvXeYXDZqa27NQ4gvg2PTjWHnPuTQ=
+github.com/go-simd/base64 v0.1.0/go.mod h1:iPa0zSBQKLgChjjqixi+jckt7kjxTj2p/tG18lHq+lE=
 golang.org/x/sys v0.28.0 h1:Fksou7UEQUWlKvIdsqzJmUmCX3cZuD2+P3XyyzwMhlA=
 golang.org/x/sys v0.28.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
 golang.org/x/sys v0.47.0 h1:o7XGOvZQCADBQQ4Y7VNq2dRWQR7JmOUW8Kxx4ZsNgWs=
 golang.org/x/sys v0.47.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=
+golang.org/x/sys v0.48.0 h1:bbX/i/6MgT9BVLM9RT1thmxL04yeTAhbEz4SyadbXoo=
+golang.org/x/sys v0.48.0/go.mod h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=
